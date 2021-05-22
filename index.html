@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>Luveat®</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
+
+        <meta itemprop="name" content="Luveat">
+        <meta itemprop="description" content="La carta está en Luveat!">
+        <link rel="shortcut icon" href="images/icon.png">
+
+            <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://app.luveat.com">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="TANTA">
+        <meta property="og:description" content="Nuestro menú digital, entrá y pedí!">
+        <meta property="og:image" content="TANTA-399a61b8-6e90-40cb-ab5f-89fbe4f06e27">
+
+
+            <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="TANTA">
+        <meta name="twitter:description" content="Nuestro menú digital, entrá y pedí!">
+        <meta name="twitter:image" content="https://cdn.app.luveat.com/production/2/images/TANTA-399a61b8-6e90-40cb-ab5f-89fbe4f06e27">
+
+            <!-- plugins -->
+        <link rel="stylesheet" media="screen" href="css/all.css">
+        <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/angular.min.js"></script>
+        <link rel="stylesheet" media="screen" href="css/android-toast.css">
+        <script src="js/android-toast.js"></script>
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="js/infinite-scroll.js"></script>
+
+        <link rel="stylesheet" href="css/intlTelInput.min.css">
+        <script type="text/javascript" src="js/intlTelInput.min.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+
+
+        <link rel="stylesheet" href="css/icons.min.css">
+
+        <script src="js/mercadopago.js"></script>
+        <script src="v2"></script>
+
+
+            <!-- Imports de app angular -->
+        <script src="js/diner-app.js"></script>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="css/diner.css">
+
+    <!-- controllers -->
+    <script src="js/main_1.js"></script>
+        <script src="js/cart.js"></script>
+    <script src="js/main_3.js"></script>
+        <script src="js/checkout.js"></script>
+    <script src="js/main_2.js"></script>
+        <script src="js/categories.js"></script>
+    <script src="js/plates.js"></script>
+        <script src="js/plateDetail.js"></script>
+    <script src="js/remarkeds.js"></script>
+        <script src="js/header.js"></script>
+    <script src="js/tabs.js"></script>
+        <script src="js/discount_1.js"></script>
+    <script src="js/discounts.js"></script>
+        <script src="js/main.js"></script>
+    <script src="js/branches.js"></script>
+        <script src="js/enterprise.js"></script>
+    <script src="js/guide.js"></script>
+        <script src="js/branchContact.js"></script>
+    <script src="js/main_4.js"></script>
+        <script src="js/login.js"></script>
+    <script src="js/password.js"></script>
+        <script src="js/register.js"></script>
+
+    <!-- modals -->
+    <script src="js/emptyCart.js"></script>
+        <script src="js/branchContactSchedule.js"></script>
+    <script src="js/discountSchedule.js"></script>
+        <script src="js/address.js"></script>
+    <script src="js/deliveryZones.js"></script>
+        <script src="js/plateDetail_1.js"></script>
+    <script src="js/checkoutComplete.js"></script>
+        <script src="js/deliverySchedule.js"></script>
+
+
+
+        <!-- factories -->
+    <script src="js/cart_1.js"></script>
+
+            <!-- services -->
+        <script src="js/data.js"></script>
+    <script src="js/fetch.js"></script>
+        <script src="js/menu.js"></script>
+    <script src="js/discount.js"></script>
+        <script src="js/config.js"></script>
+    <script src="js/request.js"></script>
+        <script src="js/screen.js"></script>
+    <script src="js/persistData.js"></script>
+        <script src="js/modals.js"></script>
+    <script src="js/navigation.js"></script>
+        <script src="js/address_1.js"></script>
+    <script src="js/branchesGuide.js"></script>
+        <script src="js/auth.js"></script>
+    <script src="js/googleAnalytics.js"></script>
+        <script src="js/deliveryZone.js"></script>
+        <script src="js/attribution.js"></script>
+        <script src="js/orderModes.js"></script>
+        <script src="js/cartToOrder.js"></script>
+        <script src="js/date.js"></script>
+
+</head>
+
+<body ng-app="diner" ng-controller="mainCtrl" id="body" class="body" style="background-color: var(--back-space-color);">
+    <div id="navbar" class="nav-bar top z-index-3">
+        <div class="nav-bari" style="width: 100%; flex: 1; display: flex; align-items: center; justify-content: flex-start; padding-left: 20px;">
+            <i id="backArrow" class="ds-icon arrow-left clickeable luveatColor" aria-hidden="true" ng-if="showBackButton()" style="font-size: 1.5em;" ng-click="backButtonClicked()"></i>
+        </div>
+        <div ng-if="!customLogoPath" class="nav-bari" style="flex: 1" ng-click="openLandingPage()">
+                <img style="max-height: 57%;" src="fonts/logo.svg">
+        </div>
+        <div ng-if="customLogoPath" class="nav-bari" style="flex: 1">
+            <img style="max-height: 80%;" ng-src="{{customLogoPath}}">
+        </div>
+        <div class="nav-bari" style="width: 100%; flex: 1; display: flex; align-items: center; justify-content: flex-end;">
+            <p ng-hide="authLoading() || !showLoginButton()" class="luveatColor" style="font-size: 14px; font-weight: bold; margin: 0 20px 0 0; cursor: pointer">
+                <span ng-hide="isLoggedIn" ng-click="goToLogin()">Acceder</span>
+                <span ng-hide="!isLoggedIn" ng-click="logOut()">Cerrar Sesión</span>
+            </p>
+        </div>
+    </div>
+    <div id="container" class="secondBackground main">
+        <div id="content" ng-include="content" class="content responsive mainBackground"></div>
+    </div>
+    <nav id="offcanvas">
+        <ul class="offcanvas_nav">
+            <li class="clickeable" ng-if="showDiscountsMenuEntry() && !branchesSelection">
+                <a ng-click="showDiscounts()"><i class="ds-icon offer"></i> Descuentos</a>
+            </li>
+            <li>
+            </li><li class="clickeable" ng-if="hasSchedule() && !branchesSelection"><a ng-click="showScheduleModal()">
+                    <i class="far fa-clock"></i> Horarios</a>
+            </li>
+            <li class="clickeable" ng-if="hasFb()"><a ng-click="openFb()">
+                    <i class="fab fa-facebook-square"></i> {{social.facebook}}</a>
+            </li>
+            <li class="clickeable" ng-if="hasIg()"><a ng-click="openIg()">
+                    <i class="fab fa-instagram"></i> {{social.instagram}}</a></li>
+            <li class="clickeable"><a ng-click="shareWsp()"><i class="fab fa-whatsapp"></i> Compartir
+                    carta</a>
+            </li>
+            <li>
+                <hr style="width: 80%; border-bottom: 1px solid #cccccc94; border-top: none">
+            </li>
+            <li class="clickeable" ng-if="hasCallPhone() && !branchesSelection"><a ng-click="callPhone()" href="javascript:void(0)"><i class="fas fa-phone-alt"></i> Llamanos</a></li>
+            <li class="clickeable" ng-if="hasWspPhone() && !branchesSelection"><a ng-click="openWspPhone()" href="javascript:void(0)"><i class="fab fa-whatsapp-square"></i> Whatsappeanos</a></li>
+            <li ng-if="customMessage && !branchesSelection">
+                <hr style="width: 80%; border-bottom: 1px solid #cccccc94; border-top: none">
+            </li>
+            <li ng-if="customMessage && !branchesSelection" style="word-break: break-word;">
+                <a>{{customMessage}}</a>
+            </li>
+        </ul>
+        <div id="powered" class="bottom">
+            <ul>
+                <li>
+                    <hr style="width: 80%; border-bottom: 1px solid #cccccc94; border-top: none">
+                    <a href="https://info.luveat.com"><i class="fas fa-info-circle"></i> ¿Por qué
+                        Luveat?</a>
+                    <hr style="width: 80%; border-bottom: 1px solid #cccccc94; border-top: none">
+                </li>
+            </ul>
+            <div style="text-align: center; padding-bottom: 0.5em;">
+                <div><strong style="color: white; font-weight: bold;" class="description-font-size">La carta está
+                        en</strong></div>
+                <div><img style="max-height: 2em;" src="fonts/logo.svg">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>

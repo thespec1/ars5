@@ -1,0 +1,101 @@
+/*
+Android-Toast
+(c) 2013-2014 Jad Joubran
+*/
+
+#android_toast_container{
+	width: 100%;
+	position: fixed;
+	bottom: 110px;
+	left: 0;
+	pointer-events:none;
+	z-index: 1500;
+}
+
+#android_toast{
+	width: 80%;
+	border-radius: 10em;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	color: var(--luveat-color);
+	font-size: 1em;
+	font-weight: bold;
+	padding: 0.5em;
+	-webkit-border-radius: 10em;
+	opacity: 1;
+	-webkit-box-shadow:  1px 2px 2px 1px rgba(34, 34, 34, 1);
+    box-shadow: 1px 2px 10px var(--shadow-color);
+	text-align: center;
+	font-family: Avenir, sans-serif;
+	z-index: 1500;
+	max-width: 400px;
+}
+
+#android_toast em{
+	color: rgb(81, 180, 210);
+	font-weight: bold;
+	font-style: normal;
+}
+
+.android_toast_top{
+	top: 12%;
+	bottom: auto !important;
+}
+
+
+.android_toast_fadein{
+	animation: android_toast_fadein 1s ease;
+	-webkit-animation: android_toast_fadein 1s ease;
+}
+
+.android_toast_fadeout{
+	animation: android_toast_fadeout 1s ease;
+	-webkit-animation: android_toast_fadeout 1s ease;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@keyframes android_toast_fadein{
+	from {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+	to {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+}
+
+@-webkit-keyframes android_toast_fadein{
+	from {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+	to {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+}
+
+@keyframes android_toast_fadeout{
+	from {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+	to {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+}
+
+@-webkit-keyframes android_toast_fadeout{
+	from {
+		opacity: 0.95;
+		-webkit-opacity: 0.95;
+	}
+	to {
+		opacity: 0;
+		-webkit-opacity: 0;
+	}
+}
